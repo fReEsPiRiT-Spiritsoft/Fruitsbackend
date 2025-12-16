@@ -4,6 +4,7 @@ fetch('http://127.0.0.1:8000/fruit_app/')
         const list = document.getElementById('fruits-list');
         list.innerHTML = '';
         data.forEach(fruit => {
+            console.log("")
             const li = document.createElement('li');
             li.innerHTML = `
                         <span class="fruit-name">${fruit.name}</span>
