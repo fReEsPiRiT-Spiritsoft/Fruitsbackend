@@ -1,5 +1,25 @@
 {% extends "fruit_app/base.html" %}
 
 {% block content %}
-<h1>Dies ist ein Test text</h1>
+<div class="fruit-info-container">
+    <h1>Willkommen zur revolutionären Früchte-API 🍌🍎🍍</h1>
+    <p>
+        Hast du schon immer davon geträumt, Bananen, Äpfel und Ananas per Mausklick zu kontrollieren? Dann bist du hier genau richtig! Unsere Früchte-API ist das Ergebnis jahrelanger (okay, ein paar Stunden) intensiver Forschung an der Developer Akademie.
+    </p>
+    <ul>
+        <li><strong>Endpunkte, die das Leben erleichtern:</strong> Nie wieder Fruchtverwirrung – hier findest du alles von A wie Apfel bis Z wie Zitrone.</li>
+        <li><strong>REST-Architektur:</strong> So modern, dass sogar die Früchte staunen.</li>
+        <li><strong>Frische Daten:</strong> Unsere Früchte sind knackiger als dein Lieblingssnack.</li>
+        <li><strong>Open Source:</strong> Teile, erweitere, oder baue deine eigene Fruchtarmee – alles ist möglich!</li>
+    </ul>
+    <p>
+        Egal ob du eine App für Obstliebhaber baust, deine Ernährung tracken willst oder einfach nur wissen möchtest, wie viele Vitamine in einer Kiwi stecken – diese API ist dein Vitamin-Booster für jedes Projekt!
+    </p>
+    <p>
+        <em>Disclaimer: Diese API enthält keine echten Vitamine, aber jede Menge Spaß.</em>
+    </p>
+    <a href="{% url 'fruitlist' %}" class="btn-primary2">
+                <span>Zurück</span>
+            </a>
+</div>
 {% endblock %}
