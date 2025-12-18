@@ -27,3 +27,4 @@ urlpatterns = [
     path('fruit_app/', include('fruit_app.urls')),
     path('', redirect_to_fruit_app)
 ]
+handler404 = 'fruit_app.views.custom_404'

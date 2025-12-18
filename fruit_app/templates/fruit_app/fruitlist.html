@@ -1,0 +1,88 @@
+{% extends "fruit_app/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="column not-ordered">
+        <div class="column-header">
+            <div class="status-icon">🛒</div>
+            <h2>Nicht Bestellt</h2>
+            <span class="count">{{ fruits|length }} Artikel</span>
+        </div>
+        <div class="fruit-grid">
+            {% for fruit in fruits %}
+                {% if not fruit.ordered %}
+                <div class="fruit-card" data-color="{{ fruit.color }}">
+                    <div class="fruit-image-wrapper">
+                        <img src="{% static fruit.img %}" alt="{{ fruit.name }}" class="fruit-image">
+                        <div class="glow-effect"></div>
+                    </div>
+                    <div class="fruit-info">
+                        <h3 class="fruit-name">{{ fruit.name }}</h3>
+                        <div class="fruit-details">
+                            <span class="detail-badge color-badge">
+                                <span class="color-dot" style="background: {{ fruit.color }}"></span>
+                                {{ fruit.color }}
+                            </span>
+                            <span class="detail-badge weight-badge">
+                                ⚖️ {{ fruit.weight }}g
+                            </span>
+                        </div>
+                    </div>
+                    <button class="order-btn">
+                        <span>Bestellen</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="divider">
+        <div class="divider-line"></div>
+    </div>
+
+    <div class="column ordered">
+        <div class="column-header">
+            <div class="status-icon">✓</div>
+            <h2>Bestellt</h2>
+            <span class="count">{{ fruits|length }} Artikel</span>
+        </div>
+        <div class="fruit-grid">
+            {% for fruit in fruits %}
+                {% if fruit.ordered %}
+                <div class="fruit-card ordered-card" data-color="{{ fruit.color }}">
+                    <div class="fruit-image-wrapper">
+                        <img src="{% static fruit.img %}" alt="{{ fruit.name }}" class="fruit-image">
+                        <div class="glow-effect"></div>
+                        <div class="checkmark">✓</div>
+                    </div>
+                    <div class="fruit-info">
+                        <h3 class="fruit-name">{{ fruit.name }}</h3>
+                        <div class="fruit-details">
+                            <span class="detail-badge color-badge">
+                                <span class="color-dot" style="background: {{ fruit.color }}"></span>
+                                {{ fruit.color }}
+                            </span>
+                            <span class="detail-badge weight-badge">
+                                ⚖️ {{ fruit.weight }}g
+                            </span>
+                        </div>
+                    </div>
+                    <button class="cancel-btn">
+                        <span>Stornieren</span>
+                        <span class="arrow">×</span>
+                    </button>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<a href="./info" class="floating-info-btn">
+    <span>ℹ️</span>
+    <span>Info</span>
+</a>
+{% endblock %}

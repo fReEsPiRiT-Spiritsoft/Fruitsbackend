@@ -8,4 +8,10 @@ from django.shortcuts import redirect
 #     return  HttpResponse("Hats geklappt oder what?")
 
 def send_fruits(request):
-    return JsonResponse(fruits, safe=False)
+    return render(request, "fruit_app/fruitlist.html", {"fruits": fruits})
+
+def info_view(request):
+    return render(request, "fruit_app/info.html")
+
+def custom_404(request, exception):
+    return render (request, "fruit_app/404.html", status=404)
