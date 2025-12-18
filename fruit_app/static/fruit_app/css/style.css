@@ -60,7 +60,7 @@ header {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     position: relative;
     top: 0;
